@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gaussian elimination</title>
+        <meta charset="utf-8">
+        <link href="sample.css" rel="stylesheet">
+        <script src="gaussian_elimination.js"></script>
+    </head>
+    <body onload="set_values();">
+        <h1>Gaussian elimination with the general element (pivoting)</h1>
+        <div class="content">
+            <table>
+            <tr>
+                <td colspan="2"><p>Enter input data A, B for linear system A * X = B<br/>(Only int and float numbers acceptable, blank field accepted as 0):</p></td>
+            </tr>
+            <tr>
+                <td rowspan="4"><img src="bracket.png" width="10" height="100" alt=""></td>
+                <td><div class="formula"><input type="text" maxlength="8" id="a_1_1"> x<sub>1</sub> + <input type="text" maxlength="8" id="a_1_2"> x<sub>2</sub> + <input type="text" maxlength="8" id="a_1_3"> x<sub>3</sub> + <input type="text" maxlength="8" id="a_1_4"> x<sub>4</sub> = <input type="text" maxlength="8" id="a_1_5"></div><br></td>
+            </tr>
+            <tr>
+                <td><div class="formula"><input type="text" maxlength="8" id="a_2_1"> x<sub>1</sub> + <input type="text" maxlength="8" id="a_2_2"> x<sub>2</sub> + <input type="text" maxlength="8" id="a_2_3"> x<sub>3</sub> + <input type="text" maxlength="8" id="a_2_4"> x<sub>4</sub> = <input type="text" maxlength="8" id="a_2_5"></div><br></td>
+            </tr>
+            <tr>
+                <td><div class="formula"><input type="text" maxlength="8" id="a_3_1"> x<sub>1</sub> + <input type="text" maxlength="8" id="a_3_2"> x<sub>2</sub> + <input type="text" maxlength="8" id="a_3_3"> x<sub>3</sub> + <input type="text" maxlength="8" id="a_3_4"> x<sub>4</sub> = <input type="text" maxlength="8" id="a_3_5"></div><br></td>
+            </tr>
+            <tr>
+                <td><div class="formula"><input type="text" maxlength="8" id="a_4_1"> x<sub>1</sub> + <input type="text" maxlength="8" id="a_4_2"> x<sub>2</sub> + <input type="text" maxlength="8" id="a_4_3"> x<sub>3</sub> + <input type="text" maxlength="8" id="a_4_4"> x<sub>4</sub> = <input type="text" maxlength="8" id="a_4_5"></div><br></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="checkbox" id="inter" checked><label for="inter">Show intermediate results</label></td>
+            </tr>
+            <tr>
+                <td colspan="2"><div class="formula"><input type="number" id="precision" value="3" min="0" max="10"></div> Precision for showing float numbers (from 0 to 10)</td>
+            </tr>
+            </table>
+            <input type="button" onclick="clear_results();gauss();" value="Solve it">
+            <input type="button" id="test" onclick="test();" value="Run test cases">
+            <input type="button" id="clear" onclick="clear_results();" value="Clear results" disabled>
+            <br/>
+        </div>
+        <h2 id="res_title">Results:</h2>
+        <div id="results" class="content"></div>
+    </body>
+</html>
