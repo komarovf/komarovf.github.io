@@ -22,15 +22,17 @@ QUnit.test('check_value(input field)', function ( assert ) {
 //insert_matrix()
 QUnit.test('insert_matrix()', function ( assert ) {
     var A_test = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]];
+    var div = document.getElementById('tmp');
+    div.style.display = 'none';
     var elem = document.createElement('div');
     var precision = document.createElement('input');
     precision.setAttribute('id', 'precision');
     precision.setAttribute('type', 'text');
     precision.value = '3';
     elem.appendChild(precision);
-    document.getElementById('tmp').appendChild(elem);
+    div.appendChild(elem);
     insert_matrix(A_test, elem);
     
-    //assert.ok(elem.firstChild.rows.length == 4, 'Correct number of rows');
+    assert.ok(elem.firstChild.rows.length == 4, 'Correct number of rows');
     assert.ok(1=='1', 'passed');
 });
