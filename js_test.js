@@ -6,11 +6,7 @@ I don't know how to test func like insert_matrix(A, element) /:
 
 
 QUnit.test('check_value(input field)', function ( assert ) {
-    e = document.createElement('input');
-    e.setAttribute('type', 'text');
-    e.value = '5';
-	
-    assert.equal(check_value(e), true);
+    assert.equal(check_value(''), true);
 	/*
     ok(check_value('   ') === false, 'Only spaces not accepted');
     equals(check_value('  5'), true, 'Spaces before number - ok');
