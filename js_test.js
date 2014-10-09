@@ -20,7 +20,7 @@ QUnit.test('check_value(input field)', function ( assert ) {
 });
 
 //insert_matrix()
-QUnit.test('insert_matrix(matrix, DOM element)', function ( assert ) {
+QUnit.test('insert_matrix()', function ( assert ) {
     var A_test = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]];
     var elem = document.createElement('div');
     var precision = document.createElement('input');
