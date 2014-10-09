@@ -7,8 +7,8 @@ I don't know how to test func like insert_matrix(A, element) /:
 
 QUnit.test('check_value(input field)', function ( assert ) {
     e = document.createElement('input');
-	e.setAttribute('type', 'text');
-	e.value = '5';
+    e.setAttribute('type', 'text');
+    e.value = '5;
 	
     assert.equal(check_value(e), true);
 	/*
