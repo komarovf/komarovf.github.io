@@ -25,7 +25,8 @@ QUnit.test('insert_matrix()', function ( assert ) {
     var elem = document.createElement('div');
     var precision = document.createElement('input');
     precision.setAttribute('id', 'precision');
-    precision.value = 3;
+    precision.setAttribute('type', 'text');
+    precision.value = '3';
     insert_matrix(A_test, elem);
     
     //assert.ok(elem.firstChild.rows.length == 4, 'Correct number of rows');
