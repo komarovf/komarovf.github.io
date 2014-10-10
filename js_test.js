@@ -33,6 +33,6 @@ QUnit.test('insert_matrix()', function ( assert ) {
     div.appendChild(elem);
     insert_matrix(A_test, elem);
     
-    assert.ok(elem.firstChild.rows.length == 4, 'Correct number of rows');
+    assert.ok(elem.childNodes[0].rows.length == 4, 'Correct number of rows');
     assert.ok(1=='1', 'passed');
 });
