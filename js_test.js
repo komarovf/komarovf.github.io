@@ -24,15 +24,13 @@ QUnit.test('insert_matrix()', function ( assert ) {
     var A_test = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]];
     var div = document.getElementById('tmp');
     div.style.display = 'none';
-    var elem = document.createElement('div');
     var precision = document.createElement('input');
     precision.setAttribute('id', 'precision');
     precision.setAttribute('type', 'text');
     precision.value = '3';
-    elem.appendChild(precision);
-    div.appendChild(elem);
-    insert_matrix(A_test, elem);
+    div.appendChild(precision);
+    insert_matrix(A_test, div);
     
-    assert.ok(elem.childNodes[0].rows.length == 4, 'Correct number of rows');
+    assert.ok(div.childNodes[0].rows.length == 4, 'Correct number of rows');
     assert.ok(1=='1', 'passed');
 });
