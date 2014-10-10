@@ -31,6 +31,6 @@ QUnit.test('insert_matrix()', function ( assert ) {
     div.appendChild(precision);
     insert_matrix(A_test, div);
     
-    assert.ok(div.children[1].rows.length == 4, 'Correct number of rows');
-    assert.ok(div.children[1].rows[0].cells.length == 4, 'Correct number of columns');
+    assert.ok(div.children[1].rows.length == A_test.length, 'Correct number of rows');
+    assert.ok(div.children[1].rows[0].cells.length == A_test[0].length, 'Correct number of columns');
 });
