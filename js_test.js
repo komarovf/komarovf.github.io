@@ -55,8 +55,8 @@ QUnit.test('gauss(matrix)', function ( assert ) {
 	B.push(b);
     }
     
-    A_inv = numeric.inv(A);
     if (numeric.det(A) !== 0) {
+    	A_inv = numeric.inv(A);
     	result = numeric.dot(A_inv, B);
 	function check(elem) {
             return Math.abs(elem) < 0.0001;
@@ -69,7 +69,8 @@ QUnit.test('gauss(matrix)', function ( assert ) {
 	
 	document.getElementById("results").style.display = "none";
         document.getElementById("res_title").style.display = "none";
-        
-	assert.ok(diff.filter(check).length == 4, 'Correct');
+        if (calculated instanceof Array) {
+	    assert.ok(diff.filter(check).length == 4, 'Solving random linear system with numericjs.js');
+        }
     }
 });
