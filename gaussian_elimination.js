@@ -151,9 +151,9 @@ function clear_results() {
 //Solve linear system and print results
 function gauss(A) {
     if (typeof A === "undefined") {
-	    clear_results();
-	}
-	var A = (typeof A === "undefined") ? get_values() : A;
+	clear_results();
+    }
+    var A = (typeof A === "undefined") ? get_values() : A;
     var B = new Array();
     var A_buf = A.map(function (matrix) {
         return matrix.slice();
