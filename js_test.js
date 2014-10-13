@@ -17,6 +17,7 @@ QUnit.test('check_value(input field)', function ( assert ) {
     assert.equal(check_value('5 5'), false, 'Number separated by spaces - not accepted');
     assert.equal(check_value('x5'), false, 'chars not accepted');
     assert.equal(check_value('infinity'), false, 'infinity not accepted');
+<<<<<<< HEAD
 });
 
 //insert_matrix()
@@ -67,3 +68,22 @@ QUnit.test('gauss(matrix)', function ( assert ) {
 		assert.ok(diff.filter(check).length == 4, 'Correct');
 	}
 });
+=======
+});
+
+//insert_matrix()
+QUnit.test('insert_matrix()', function ( assert ) {
+    var A_test = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]];
+    var div = document.getElementById('tmp');
+    div.style.display = 'none';
+    var precision = document.createElement('input');
+    precision.setAttribute('id', 'precision');
+    precision.setAttribute('type', 'text');
+    precision.value = '3';
+    div.appendChild(precision);
+    insert_matrix(A_test, div);
+    
+    assert.ok(div.children[1].rows.length == A_test.length, 'Correct number of rows');
+    assert.ok(div.children[1].rows[0].cells.length == A_test[0].length, 'Correct number of columns');
+});
+>>>>>>> 5e0f28842778038e21799d670c55d14fea1ada13
