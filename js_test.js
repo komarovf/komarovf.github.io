@@ -62,7 +62,7 @@ QUnit.test('gauss(matrix)', function ( assert ) {
             return Math.abs(elem) < 0.0001;
 	}
 	var diff = [];
-	var calculated = gauss(AB)[i];
+	var calculated = gauss(AB);
 	for (var i=0; i<4; i++) {
             diff.push(result[i]-calculated[i]);
 	}
