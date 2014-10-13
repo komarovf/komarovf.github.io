@@ -41,7 +41,11 @@ QUnit.test('gauss(matrix)', function ( assert ) {
     var A = [];
     var B = [];
     var b;
-
+    var A_test1 = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 3, 0, 5], [0, 0, 0, 0, 4]];
+    var A_test2 = [[1, 0, 3, 2, -1], [1, 0, 3, 2, -1], [-3, 4, 1, 4, -1], [4, 0, -2, -3, 4]];
+    assert.equal(gauss(A_test1), 'Unresolvable', 'Unresolvable system');
+    assert.equal(gauss(A_test2), 'Many solutions', 'System has many solutions');
+    
     for (var i=0; i<4; i++) {
         var tmp = [];
         for (var j=0; j<4; j++) {
@@ -73,5 +77,4 @@ QUnit.test('gauss(matrix)', function ( assert ) {
 	    assert.ok(diff.filter(check).length == 4, 'Solving random linear system with numericjs.js. Sometimes fails (The reason - small nubers that shoulb be zeros)');
         }
     }
-    
 });
