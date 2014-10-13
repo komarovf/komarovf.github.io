@@ -53,8 +53,8 @@ QUnit.test('gauss(matrix)', function ( assert ) {
 	B.push(b);
 	AB.push(tmp);
     }
-	
-    //A_inv = numeric.inv(A);
+    /*	
+    A_inv = numeric.inv(A);
     if (A_inv) {
     	result = numeric.dot(A_inv, B);
 	function check(elem) {
@@ -66,7 +66,9 @@ QUnit.test('gauss(matrix)', function ( assert ) {
 	}
 	//assert.ok(diff.filter(check).length == 4, 'Correct');
 	insert_matrix(A, document.getElementById('tmp'));
-	assert.ok(A.length == 4, 'A size');
-	assert.ok(A[0].length == 4, 'A size');
+	
     }
+    */
+    assert.ok(A.length == 4, 'A size');
+    assert.ok(A[0].length == 4, 'A size');
 });
