@@ -70,7 +70,7 @@ QUnit.test('gauss(matrix)', function ( assert ) {
 	document.getElementById("results").style.display = "none";
         document.getElementById("res_title").style.display = "none";
         */
-        insert_matrix(result, document.getElementById("results"));
+        insert_matrix(diff, document.getElementById("results"));
 	assert.ok(diff.filter(check).length == 4, 'Correct');
     }
     
