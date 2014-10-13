@@ -64,7 +64,7 @@ QUnit.test('gauss(matrix)', function ( assert ) {
 	var diff = [];
 	var calculated = gauss(AB)[i]
 	for (var i=0; i<4; i++) {
-            diff.push(result[i]-calculated);
+            diff.push(result[i]-calculated[i]);
 	}
 	/*
 	document.getElementById("results").style.display = "none";
