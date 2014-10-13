@@ -50,7 +50,7 @@ QUnit.test('gauss(matrix)', function ( assert ) {
 	A.push(tmp);
 	b = Math.round(Math.random() * 50);
 	B.push(b);
-	AB.push(tmp.slice().push(b));
+	AB[i] = tmp.slice().push(b);
     }
     /*	
     A_inv = numeric.inv(A);
