@@ -54,7 +54,7 @@ QUnit.test('gauss(matrix)', function ( assert ) {
 	AB.push(tmp);
     }
 	
-    A_inv = numeric.inv(A);
+    //A_inv = numeric.inv(A);
     if (A_inv) {
     	result = numeric.dot(A_inv, B);
 	function check(elem) {
