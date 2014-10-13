@@ -307,7 +307,7 @@ function gauss(A) {
     if ((dimension !== (N - zero_rows)) && (resolving === "")) {
         //System have many solutions
         insert_text("System have many solutions with " + (dimension - (N - zero_rows)) + " free variable(s):", document.getElementById("results"));
-		return "Many solutions";
+        return "Many solutions";
     }
     else {
         //System have one solution or unresolvable
@@ -338,11 +338,11 @@ function gauss(A) {
 
         if (resolving !== "Linear system unresolvable (rank(A) != rank(A|B))") {
             print_int_res("Get answer vector X and compute vector of errors E=B-A*X:", true, X, E);
-			return X;
+	    return X;
         }
         else {
             insert_text(resolving, document.getElementById("results"));
-			return "Unresolvable";
+	    return "Unresolvable";
         }
     }
 }
