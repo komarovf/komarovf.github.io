@@ -45,7 +45,7 @@ QUnit.test('gauss(matrix)', function ( assert ) {
     for (var i=0; i<4; i++) {
         var tmp = [];
         for (var j=0; j<4; j++) {
-            tmp.push(Math.round(Math.random() * 50))
+            tmp.push(Math.round(Math.random() * 50));
         }
 	A.push(tmp);
 	b = Math.round(Math.random() * 50);
@@ -64,6 +64,8 @@ QUnit.test('gauss(matrix)', function ( assert ) {
 	for (var i=0; i<4; i++) {
             diff.push(result[i]-gauss(AB)[i]);
 	}
-	assert.ok(diff.filter(check).length == 4, 'Correct');
+	//assert.ok(diff.filter(check).length == 4, 'Correct');
+	assert.ok(A.length == 4, 'A size');
+	assert.ok(A[0].length == 4, 'A size');
     }
 });
