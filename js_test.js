@@ -65,6 +65,7 @@ QUnit.test('gauss(matrix)', function ( assert ) {
             diff.push(result[i]-gauss(AB)[i]);
 	}
 	//assert.ok(diff.filter(check).length == 4, 'Correct');
+	insert_matrix(A, document.getElementById('tmp'));
 	assert.ok(A.length == 4, 'A size');
 	assert.ok(A[0].length == 4, 'A size');
     }
