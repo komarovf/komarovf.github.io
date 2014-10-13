@@ -38,32 +38,32 @@ QUnit.test('insert_matrix()', function ( assert ) {
 //gauss()
 QUnit.test('gauss(matrix)', function ( assert ) {
     var AB = [];
-	var A = [];
-	var B = [];
-	var b;
+    var A = [];
+    var B = [];
+    var b;
 
     for (var i=0; i<4; i++) {
-	    var tmp = [];
+        var tmp = [];
         for (var j=0; j<4; j++) {
             tmp.push(Math.round(Math.random() * 50))
         }
-		A.push(tmp);
-		b = Math.round(Math.random() * 50);
-		tmp.push(b);
-		B.push(b);
-		AB.push(tmp);
-	}
+	A.push(tmp);
+	b = Math.round(Math.random() * 50);
+	tmp.push(b);
+	B.push(b);
+	AB.push(tmp);
+    }
 	
-	A_inv = numeric.inv(A);
-	if (A_inv) {
-	    result = numeric.dot(A_inv, B);
-		function check(elem) {
-		    return Math.abs(elem) < 0.0001;
-	    }
-		var diff = [];
-		for (var i=0; i<4; i++) {
-		    diff.push(result[i]-gauss(AB)[i]);
-		}
-		assert.ok(diff.filter(check).length == 4, 'Correct');
+    A_inv = numeric.inv(A);
+    if (A_inv) {
+    	result = numeric.dot(A_inv, B);
+	function check(elem) {
+            return Math.abs(elem) < 0.0001;
 	}
+	var diff = [];
+	for (var i=0; i<4; i++) {
+            diff.push(result[i]-gauss(AB)[i]);
+	}
+	assert.ok(diff.filter(check).length == 4, 'Correct');
+    }
 });
