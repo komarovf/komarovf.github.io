@@ -66,17 +66,12 @@ QUnit.test('gauss(matrix)', function ( assert ) {
 	for (var i=0; i<4; i++) {
             diff.push(result[i]-calculated[i]);
 	}
-	/*
 	document.getElementById("results").style.display = "none";
         document.getElementById("res_title").style.display = "none";
-        */
-        insert_text("Test:", document.getElementById("results"));
-        
-        insert_matrix(result, document.getElementById("results"));
-        insert_matrix(calculated, document.getElementById("results"));
         
         if (calculated instanceof Array) {
-	    assert.ok(diff.filter(check).length == 4, 'Solving random linear system with numericjs.js');
+	    assert.ok(diff.filter(check).length == 4, 'Solving random linear system with numericjs.js. Sometimes fails (The reason - small nubers that shoulb be zeros)');
         }
     }
+    
 });
