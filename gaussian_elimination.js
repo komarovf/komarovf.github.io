@@ -29,7 +29,7 @@ http://padaread.com/?book=26512&pg=56
 
 
 var N = 4;
-var DEFAULT_A = [[1, 0, 3, 2, -1], [1000, 3, 1, -5, -2], [-3, 4, 1, 4, -1], [4, 0, -2, -3, 4]];
+var DEFAULT_A = [[0, 1, 3, 2, -1], [1000, 3, 1, -5, -2], [-3, 4, 1, 4, -1], [4, 0, -2, -3, 4]];
 
 //Set default values into text fields
 function set_values() {
@@ -150,7 +150,10 @@ function clear_results() {
 
 //Solve linear system and print results
 function gauss(A) {
-    var A = (typeof A === "undefined") ? get_values() : A;
+    if (typeof A === "undefined") {
+	    clear_results();
+	}
+	var A = (typeof A === "undefined") ? get_values() : A;
     var B = new Array();
     var A_buf = A.map(function (matrix) {
         return matrix.slice();
@@ -304,6 +307,7 @@ function gauss(A) {
     if ((dimension !== (N - zero_rows)) && (resolving === "")) {
         //System have many solutions
         insert_text("System have many solutions with " + (dimension - (N - zero_rows)) + " free variable(s):", document.getElementById("results"));
+		return "Many solutions";
     }
     else {
         //System have one solution or unresolvable
@@ -334,9 +338,11 @@ function gauss(A) {
 
         if (resolving !== "Linear system unresolvable (rank(A) != rank(A|B))") {
             print_int_res("Get answer vector X and compute vector of errors E=B-A*X:", true, X, E);
+			return X;
         }
         else {
             insert_text(resolving, document.getElementById("results"));
+			return "Unresolvable";
         }
     }
 }

@@ -9,24 +9,8 @@
   <div id="qunit"></div>
   <div id="qunit-fixture"></div>
   <script src="//code.jquery.com/qunit/qunit-1.15.0.js"></script>
+  <script src="//www.numericjs.com/lib/numeric-1.2.6.min.js"></script>
   <script src="gaussian_elimination.js"></script>
-  <!--<script src="js_test.js"></script>-->
-  <script>
-  QUnit.test('check_value(input field)', function ( assert ) {
-    e = document.createElement('input');
-	e.setAttribute('type', 'text');
-	e.value = '5';
-	
-    assert.equal(check_value(e), true);
-	/*
-    ok(check_value('   ') === false, 'Only spaces not accepted');
-    equals(check_value('  5'), true, 'Spaces before number - ok');
-    equals(check_value('5 '), true, 'Spaces after number - ok');
-    equals(check_value('  5  '), true, 'Spaces around number - ok too');
-    equals(check_value('5 5'), false, 'Number separated by spaces - not accepted');
-    equals(check_value('x5'), false, 'chars not accepted');
-	*/
-});
-  </script>
+  <script src="js_test.js"></script>
 </body>
 </html>
