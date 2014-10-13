@@ -70,4 +70,6 @@ QUnit.test('gauss(matrix)', function ( assert ) {
     */
     assert.ok(A.length == 4, 'A rows size');
     assert.ok(A[0].length == 4, 'A cols size'+A[0].length);
+    assert.ok(AB.length == 4, 'A rows size');
+    assert.ok(AB[0].length == 5, 'A cols size'+AB[0].length);
 });
