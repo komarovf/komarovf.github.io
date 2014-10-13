@@ -45,10 +45,10 @@ QUnit.test('gauss(matrix)', function ( assert ) {
     for (var i=0; i<4; i++) {
         var tmp = [];
         for (var j=0; j<4; j++) {
-            tmp.push(Math.round(Math.random() * 50));
+            tmp.push(Math.round(Math.random() * 10));
         }
 	A.push(tmp);
-	b = Math.round(Math.random() * 50);
+	b = Math.round(Math.random() * 10);
 	var tmp_ab = tmp.slice();
 	tmp_ab.push(b);
 	AB.push(tmp_ab);
@@ -66,11 +66,10 @@ QUnit.test('gauss(matrix)', function ( assert ) {
 	for (var i=0; i<4; i++) {
             diff.push(result[i]-calculated[i]);
 	}
-	/*
+	
 	document.getElementById("results").style.display = "none";
         document.getElementById("res_title").style.display = "none";
-        */
-        insert_matrix(diff, document.getElementById("results"));
+        
 	assert.ok(diff.filter(check).length == 4, 'Correct');
     }
     
