@@ -56,7 +56,7 @@ QUnit.test('gauss(matrix)', function ( assert ) {
     }
     
     A_inv = numeric.inv(A);
-    if (A_inv) {
+    if (numeric.det(A) !== 0) {
     	result = numeric.dot(A_inv, B);
 	function check(elem) {
             return Math.abs(elem) < 0.0001;
