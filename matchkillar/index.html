@@ -23,7 +23,7 @@
       {{#each users}} 
         <li>
           <div class="person {{this.user.gender}}">
-            <a class='url n' href="#" onclick="getUser('{{this.id}}')">
+            <a class='url n' href="#show-full" onclick="getUser('{{this.id}}')">
               <i>{{this.user.name.title}}.</i> 
               {{this.user.name.first}}, {{this.user.name.last}}
             </a>
