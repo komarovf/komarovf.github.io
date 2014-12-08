@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!--[if lt IE 8]><html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="no-js ie7 oldie" lang="en"><![endif]-->
+<!--[if IE 8]><html class="no-js ie8 oldie" lang="en"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>MATCH KILLAR!</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="foundation.css">
+  
+  <!-- Handlebars templates -->
+  <script id="user_list" type="text/x-handlebars-template">
+  <div id="list">
+    <center><h1>My dates!</h1></center>
+    <ul class="small-block-grid-3">
+      {{#each users}} 
+        <li>
+          <div class="person {{this.user.gender}}">
+            <a class='url n' href="#" onclick="getUser('{{this.id}}')">
+              <i>{{this.user.name.title}}.</i> 
+              {{this.user.name.first}}, {{this.user.name.last}}
+            </a>
+          </div>
+        </li> 
+      {{/each}}
+    </ul>
+  </div>
+  <div id="show-full"></div>
+  </script>
+
+  <script id="user_info" type="text/x-handlebars-template">
+    <div>
+    <h2>{{this.user.name.title}} {{this.user.name.first}}, {{this.user.name.last}}</h2>
+    <section>
+      <h3>Location</h3>
+      Street: {{this.user.location.street}}, {{this.user.location.city}}, 
+      {{this.user.location.state}}, {{this.user.location.zip}}
+    </section>
+    <section>
+      <h3>Connect with him/her!</h3>
+      <a href="mailto:{{this.user.email}}">{{this.user.email}}</a>
+      <br/>
+      <a href="tel:{{this.user.cell}}">{{this.user.cell}}</a>
+    </section>
+    </div>
+  </script>
+
+  <script id="login_tmpl" type="text/x-handlebars-template">
+  <div id="login">
+    <div class="row">
+      <div class="column small-offset-1 small-10 large-offset-2 large-8">
+        <h1>Login</h1>
+        <form method="post" action="http://localhost:8888/login" class="small-8" id='login_form'>
+          <input name="login" type="text" placeholder="enter your login">
+          <input name="password" type="password" placeholder="enter your password">
+          <input type="submit" value="Log me in" class="button">
+          <a href="#" class="button secondary">Sign me up</a>
+        </form>
+      </div>
+    </div>
+  </div>
+  </script>
+  
+  <script id="signup_tmpl" type="text/x-handlebars-template">
+  <div id="signup">
+    <div class="row">
+      <div class="column small-offset-1 small-10 large-offset-2 large-8">
+        <h1>Signup</h1>
+        <form method="post" action="http://localhost:8888/signup" class="small-8" id='signup_form'>
+          <input name="login" type="text" placeholder="enter your login">
+          <input name="email" type="email" placeholder="enter your email">
+          <input name="password" type="password" placeholder="enter your new password">
+          <input name="passwordConfirmation" type="password" placeholder="retype it">
+          <input type="submit" value="Let me in!" class="button">
+          <a href="#" class="button secondary">Nah, I do have an account already.</a>
+        </form>
+      </div>
+    </div>
+  </div>
+  </script>
+</head>
+<body>
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="#">Hot Date!</a></h1>
+      </li>
+    </ul>
+    <section class="top-bar-section">
+      <ul class="left">
+        <li class="active" id="a_login"><a href="#">Login</a></li>
+        <li id="a_signup"><a href="#">Signup</a></li>
+        <li id="a_list"><a href="#">List my dates!</a></li>
+      </ul>
+    </section>
+  </nav>
+	
+  <div class="loader"></div>
+	<div id="content"></div>
+
+  <div id="secret" style="display:none;"></div>
+  <!--[if lt IE 7]><script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script><script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script><![endif]-->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="handlebars-v2.0.0.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
