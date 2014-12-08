@@ -95,7 +95,7 @@ $('document').ready(function() {
 				$("#show-full").html(user_tmpl(JSON.parse(result)[0]));
 			},
 			error: function(xhr, textStatus, errorThrown) {
-				alert(xhr.responseText);
+				alert('Login required!');
 			}
 	    });
 	}
